@@ -1,0 +1,30 @@
+{
+  "private": true,
+  "name": "@task-sync/server",
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev src/index.ts",
+    "deploy": "wrangler deploy --minify src/index.ts",
+    "lint": "eslint .",
+    "lint:fix": "eslint --fix .",
+    "clean": "rimraf dist/ node_modules/.cache/"
+  },
+  "dependencies": {
+    "hono": "^4.5.11"
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20240903.0",
+    "@eslint/js": "^9.10.0",
+    "eslint": "^9.10.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-import-resolver-typescript": "^3.6.3",
+    "eslint-plugin-import-x": "^4.2.1",
+    "eslint-plugin-prettier": "^5.2.1",
+    "globals": "^15.9.0",
+    "rimraf": "^6.0.1",
+    "typescript": "^5.5.4",
+    "typescript-eslint": "^8.4.0",
+    "wrangler": "^3.75.0"
+  }
+}
