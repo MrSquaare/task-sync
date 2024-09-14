@@ -1,0 +1,8 @@
+name = "task-sync-server"
+compatibility_date = "2024-07-01"
+# compatibility_flags = [ "nodejs_compat" ]
+
+[[d1_databases]]
+binding = "DB" # i.e. available in your Worker on env.DB
+database_name = "task-sync-dev-db"
+database_id = "106bec79-9e60-41b4-84e9-3a2fa16a7acc"

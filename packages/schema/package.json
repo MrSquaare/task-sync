@@ -1,20 +1,26 @@
 {
   "private": true,
-  "name": "@task-sync/server",
+  "name": "@task-sync/schema",
   "version": "0.0.0",
   "type": "module",
+  "main": "./dist/index.cjs",
+  "module": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/index.cjs",
+      "import": "./dist/index.js",
+      "types": "./dist/index.d.ts"
+    }
+  },
   "scripts": {
-    "dev": "wrangler dev src/index.ts",
-    "deploy": "wrangler deploy --minify src/index.ts",
+    "dev": "vite",
+    "build": "tsc && vite build",
     "lint": "eslint .",
     "lint:fix": "eslint --fix .",
     "clean": "rimraf dist/ node_modules/.cache/"
   },
-  "dependencies": {
-    "hono": "^4.5.11"
-  },
   "devDependencies": {
-    "@cloudflare/workers-types": "^4.20240903.0",
     "@eslint/js": "^9.10.0",
     "eslint": "^9.10.0",
     "eslint-config-prettier": "^9.1.0",
@@ -23,8 +29,12 @@
     "eslint-plugin-prettier": "^5.2.1",
     "globals": "^15.9.0",
     "rimraf": "^6.0.1",
-    "typescript": "^5.5.4",
-    "typescript-eslint": "^8.4.0",
-    "wrangler": "^3.75.0"
+    "typescript": "^5.6.2",
+    "typescript-eslint": "^8.5.0",
+    "vite": "^5.4.5",
+    "vite-plugin-dts": "^4.2.1"
+  },
+  "dependencies": {
+    "zod": "^3.23.8"
   }
 }
